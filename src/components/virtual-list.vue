@@ -1,5 +1,5 @@
 <template>
-  <div ref="viewport" class="viewport" @scroll="handleScroll">
+  <div ref="viewport" class="viewport" @scroll="scrollFn">
     <div ref="scrollBar" class="scroll-bar"></div>
     <div
       class="scroll-list"
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import throttle from 'lodash/throttle'
 export default {
   props: {
     size: {
@@ -40,6 +41,7 @@ export default {
     },
   },
   mounted() {
+    this.scrollFn = throttle(this.handleScroll,300) 
     console.log(this.$refs.viewport, this.$refs.scrollBar);
     this.$refs.viewport.style.height = `${this.size * this.remain}px`;
     this.$refs.scrollBar.style.height = `${this.size * this.items.length}px`;
