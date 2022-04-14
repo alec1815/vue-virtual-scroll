@@ -1,6 +1,6 @@
 <template>
   <div style="height: 28px; border: 1px solid red;margin: 5px;">
-    {{ item.id }}--{{ item.value }}
+    {{ item.id }} -- {{ item.value }}
   </div>
 </template>
 
