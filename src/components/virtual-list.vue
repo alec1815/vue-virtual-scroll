@@ -21,7 +21,7 @@ export default {
       type: Number,
     },
     remain: {
-      default: 14,
+      default: 20,
       type: Number,
     },
     items: {
